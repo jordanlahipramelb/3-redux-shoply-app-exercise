@@ -11,7 +11,7 @@ const DEFAULT_STATE = {
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case ADD_TO_CART: {
       // spread operater creating copy of cart items
       const cartCopy = { ...state.cartItems };
       cartCopy[action.id] = (cartCopy[action.id] || 0) + 1;
@@ -21,8 +21,8 @@ const rootReducer = (state = DEFAULT_STATE, action) => {
         cartItems: cartCopy,
         cartValue: calculateCartTotal(state.products, cartCopy),
       };
-
-    case REMOVE_FROM_CART:
+    }
+    case REMOVE_FROM_CART: {
       // spread operater creating copy of cart items
       const cartCopy = { ...state.cartItems };
 
@@ -39,7 +39,7 @@ const rootReducer = (state = DEFAULT_STATE, action) => {
         cartItems: cartCopy,
         cartValue: calculateCartTotal(state.products, cartCopy),
       };
-
+    }
     default:
       return state;
   }

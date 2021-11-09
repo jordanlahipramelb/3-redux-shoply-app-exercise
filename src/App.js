@@ -1,10 +1,23 @@
 import "./App.css";
+import React from "react";
+import ProductList from "./ProductList";
+import Routes from "./Routes";
+import Navbar from "./Navbar";
+
+/** Shoply App
+ *
+ * Components: ProductList -> ProductDetails -> Cart -> CartIcons
+ */
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <main>
+      <Navbar />
+      <div className="container">
+        <h1 className="pb-4 pt-2 text-center">Welcome to Shoply!</h1>
+        <Routes />
+      </div>
+    </main>
   );
 }
 
